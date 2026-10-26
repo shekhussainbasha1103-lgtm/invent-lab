@@ -6,7 +6,8 @@ InventLab is a responsive, offline-friendly electronics learning and invention p
 - Responsive dark-neon interface for phone and desktop
 - Home, Workbench, Projects, Learn, and My Ideas sections
 - Component picker for circuit drafts; add/remove/clear parts
-- Basic parts checklist for a draft (not an electrical simulation)
+- Basic parts checklist for a draft
+- Visual LED circuit demo that estimates current from selected supply voltage and resistor value (simplified ideal model; not a general-purpose simulator)
 - Six beginner project guides with parts and steps
 - Four expandable electronics lessons with quick checks
 - Idea starter that generates a structured plan locally (not AI)
@@ -14,7 +15,7 @@ InventLab is a responsive, offline-friendly electronics learning and invention p
 - PWA manifest and service worker for basic offline caching
 
 ## Important limitations
-- The workbench does **not** simulate voltage/current, model wire connections, or validate a circuit.
+- The LED demo is a simplified educational calculation only. The component draft does not model arbitrary wire connections or validate custom circuits.
 - Local saves stay in the same browser/device. There is no cloud sync or user account.
 - The idea planner is a template, not an AI service.
 - Follow datasheets and get qualified supervision for physical builds. Never connect hobby circuits directly to mains electricity.
