@@ -1,41 +1,49 @@
-# InventLab — ready-to-deploy web app / PWA
+# InventLab Pro — Professional Engineering Studio (Prototype)
 
-InventLab is a responsive, offline-friendly electronics learning and invention prototype. It works as a website and can be installed as a PWA on compatible Android browsers when served over HTTPS.
+A mobile-responsive PWA prototype for ECE/EEE learning and project planning, spanning B.E./B.Tech through M.E./M.Tech and research workflows.
 
-## Included working features
-- Responsive dark-neon interface for phone and desktop
-- Home, Workbench, Projects, Learn, and My Ideas sections
-- Component picker for circuit drafts; add/remove/clear parts
-- Basic parts checklist for a draft
-- Visual LED circuit demo that estimates current from selected supply voltage and resistor value (simplified ideal model; not a general-purpose simulator)
-- Six beginner project guides with parts and steps
-- Four expandable electronics lessons with quick checks
-- Idea starter that generates a structured plan locally (not AI)
-- Save circuit drafts, saved projects, and notes in browser local storage
-- PWA manifest and service worker for basic offline caching
+## New in this build
+- Expanded advanced project library: MPPT algorithm comparison, battery SOC estimation, BLDC/FOC simulation study, SDR BER experiments, FPGA FIR verification, TinyML predictive maintenance, microgrid digital twin, PLL, vibration analysis, secure IoT telemetry, solar forecasting, audio DSP, simulated grid-tied inverter control, robot sensor fusion, MEMS calibration, power-quality analysis and wearable activity classification.
+- Project guides now include stages from fundamentals and design through validation, measurements, analysis, documentation and advanced extensions. Project guides can be exported as text and saved into the local notebook.
+- Firmware workspace with editable Arduino/ESP32 starter sketch and `.ino` export.
+- Illustrative ngspice netlist exporter for an ideal source/resistor example; exports `.cir` but does not run a SPICE solver.
+- Research planning template and JSON research hand-off export/import for file-based collaboration.
+- Research integrity checklist, local notebook and existing project/circuit export features.
 
-## Important limitations
-- The LED demo is a simplified educational calculation only. The component draft does not model arbitrary wire connections or validate custom circuits.
-- Local saves stay in the same browser/device. There is no cloud sync or user account.
-- The idea planner is a template, not an AI service.
-- Follow datasheets and get qualified supervision for physical builds. Never connect hobby circuits directly to mains electricity.
+## Run
+1. Extract the ZIP.
+2. Open `index.html` in a browser. PWA installation/service worker usually requires HTTPS or localhost.
+3. For local testing, run `python -m http.server 8000` from this folder and open `http://localhost:8000`.
+4. For a phone install, publish via GitHub Pages or another HTTPS static host, then choose “Add to Home screen” in your browser.
 
-## Fastest way to publish using GitHub Pages
-1. Create a new public GitHub repository named `inventlab` (or another name).
-2. Upload `index.html`, `manifest.webmanifest`, `icon.svg`, and `sw.js` to the repository root. Keep filenames unchanged.
-3. In the repository, open **Settings → Pages**.
-4. Under **Build and deployment**, select **Deploy from a branch**, choose `main` and `/ (root)`, then Save.
-5. Wait for GitHub Pages to publish the site. Open the URL shown on the Pages settings screen.
-6. On Android, open that HTTPS URL in Chrome and use the browser menu's **Install app** or **Add to Home screen** option if available.
+## Engineering status — read carefully
+This remains a **prototype**, not a finished professional engineering platform.
 
-GitHub Pages serves the website; it does not automatically create a native APK. This project can be used as an installable web app (PWA). For a native Android APK, a later step would wrap the web app with a tool such as Capacitor or rebuild it in Flutter.
+- **SPICE:** The app generates an illustrative netlist; it does not bundle or execute ngspice. Download the `.cir` file and run it in a locally installed SPICE tool. Real simulation needs a validated netlist builder, device models, solver integration and regression tests.
+- **Firmware:** The app exports `.ino` starter files. Compilation and uploading require Arduino IDE/arduino-cli, correct board packages, USB drivers, board selection and hardware access on a computer. The web page does not flash a board.
+- **AI:** The research helper is a local template generator, not a connected AI model. It does not search papers, verify citations or guarantee technical correctness.
+- **Collaboration:** Research JSON hand-off is file-based. There is no live multi-user editing, cloud storage or conflict management.
+- **Authentication:** The local demo profile is not secure authentication. Real Google sign-in requires Firebase or another trusted identity provider, authorised domains, security rules, privacy disclosures and account deletion/export flows.
+- **Native app:** This ZIP is a PWA, not an APK. Play Store release requires a native Android implementation/wrapper, testing, signed release builds, Play Console setup and required disclosures.
 
-## Run locally
-You can open `index.html` directly for most interactive features. PWA install/offline caching require a local web server or HTTPS. A simple local server:
-```bash
-python -m http.server 8000
-```
-Then open `http://localhost:8000`.
+## Recommended production architecture
+1. Front end: TypeScript + a component framework, with accessible mobile and desktop layouts.
+2. Circuit model: pin-aware components, explicit electrical nets, netlist generation and schema/version migration.
+3. Simulation: isolated ngspice service or a well-tested client-side solver; resource limits, validation fixtures and clear solver diagnostics.
+4. Firmware: local desktop companion/IDE workflow or secure sandbox compilation. Hardware flashing should remain explicit and user-authorised.
+5. AI research assistant: authenticated backend, model/API configuration, source-grounded literature search, citation verification and privacy controls. Never label generated content as verified without checking.
+6. Collaboration: authenticated users, versioned projects, comments, roles, audit history and backups.
+7. Research reproducibility: datasets, units, calibration metadata, code/tool versions, raw/processed data separation and uncertainty reporting.
 
-## Free tools
-GitHub Pages is suitable for static hosting within its current plan limits. Check GitHub's official documentation and current usage terms before publishing.
+## Safety
+Use low-voltage, current-limited educational setups. Never connect a student prototype directly to mains or the public grid. Battery, motor, RF, biomedical and power-electronics projects require appropriate isolation, protection, datasheets and qualified supervision. Never rely on an unvalidated simulation for safety-critical decisions.
+
+
+## Product-to-Circuit Designer update
+- Describe a product and select a curated reference template: ESP32 smart irrigation, IoT weather station, obstacle-avoiding robot, air-quality monitor, solar monitor, or custom brief.
+- Generate a bill of materials, suggested pin map, detailed staged build plan, engineering validation checklist, firmware scaffold and JSON hand-off.
+- Switch between a functional block schematic and an illustrative isometric 3D-style SVG preview.
+- Export the design brief as JSON, download the starter `.ino`, and save a summary into the local notebook.
+
+### Important precision boundary
+The isometric SVG is a visual concept, not an exact mechanical 3D CAD assembly. The pin map is a reference template and must be checked against the exact board revision, module datasheets, supply rails, logic levels and current ratings. The browser does not run a circuit solver, compile/flash firmware, or guarantee that a generated circuit will work. For true physical 3D design, use an ECAD/MCAD workflow with exact component footprints, STEP models, connector geometry and design-rule checks. For simulation, integrate a validated SPICE solver.
