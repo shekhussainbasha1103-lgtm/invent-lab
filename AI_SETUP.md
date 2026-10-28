@@ -1,4 +1,4 @@
-# InventLab Pro v6 — optional real AI setup
+# InventLab Pro v7 — optional real AI setup
 
 ## What is included
 - Existing InventLab Pro features retained.
