@@ -1,4 +1,4 @@
-const CACHE = 'inventlab-pro-v2';
+const CACHE = 'inventlab-pro-v10';
 const CORE = ['./', './index.html', './manifest.webmanifest', './icon.svg'];
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(CORE)).then(() => self.skipWaiting()));
