@@ -47,3 +47,10 @@ Use low-voltage, current-limited educational setups. Never connect a student pro
 
 ### Important precision boundary
 The isometric SVG is a visual concept, not an exact mechanical 3D CAD assembly. The pin map is a reference template and must be checked against the exact board revision, module datasheets, supply rails, logic levels and current ratings. The browser does not run a circuit solver, compile/flash firmware, or guarantee that a generated circuit will work. For true physical 3D design, use an ECAD/MCAD workflow with exact component footprints, STEP models, connector geometry and design-rule checks. For simulation, integrate a validated SPICE solver.
+
+
+## v6 standalone upgrade
+- Added AI Project Mentor with local fallback and an optional secure local Node.js backend (see `AI_SETUP.md`).
+- Added Standalone Logic Lab for Boolean gate learning and virtual LED output.
+- No Wokwi connection is included. Existing circuit designer, project library, learning paths, calculators, firmware tools, research templates and notebook are retained.
+- Full microcontroller simulation, exact CAD and SPICE execution remain separate integrations; see the engineering boundaries above.
