@@ -1,5 +1,7 @@
+
 {
   "version": 2,
+  "cleanUrls": true,
   "functions": {
     "api/mentor.js": {
       "maxDuration": 30
