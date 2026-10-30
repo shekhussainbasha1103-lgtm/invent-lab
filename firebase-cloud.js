@@ -1,11 +1,13 @@
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+import { initializeApp } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js";
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+import {
+  getAuth,
+  GoogleAuthProvider,
+  signInWithPopup,
+  onAuthStateChanged,
+  signOut
+} from "https://www.gstatic.com/firebasejs/11.10.0/firebase-auth.js";
+
 const firebaseConfig = {
   apiKey: "AIzaSyB7-RiyazikjV_8yqptPFWFHcRRPGCZZBM",
   authDomain: "inventlab-pro.firebaseapp.com",
@@ -16,6 +18,79 @@ const firebaseConfig = {
   measurementId: "G-DVXLDKDS1P"
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+const auth = getAuth(app);
+const provider = new GoogleAuthProvider();
+
+const notice = document.querySelector(".notice");
+
+if (notice) {
+  notice.innerHTML = `
+    <div style="text-align:center;padding:10px">
+      <h3>Sign in to InventLab Pro</h3>
+      <button id="googleLogin"
+        style="padding:12px 20px;border-radius:9px;cursor:pointer;font-weight:bold">
+        Continue with Google
+      </button>
+      <p id="loginStatus" style="margin-top:12px"></p>
+    </div>
+  `;
+}
+
+const loginButton = document.getElementById("googleLogin");
+const status = document.getElementById("loginStatus");
+
+if (loginButton) {
+  loginButton.addEventListener("click", async () => {
+    loginButton.disabled = true;
+    status.textContent = "Connecting to Google...";
+
+    try {
+      await signInWithPopup(auth, provider);
+    } catch (error) {
+      status.textContent = "Login failed: " + error.message;
+      loginButton.disabled = false;
+    }
+  });
+}
+
+onAuthStateChanged(auth, (user) => {
+  if (!notice) return;
+
+  if (user) {
+    notice.innerHTML = `
+      <div style="text-align:center;padding:10px">
+        <h3>Welcome to InventLab Pro!</h3>
+        <p>${user.email}</p>
+        <button id="googleLogout"
+          style="padding:10px 18px;border-radius:9px;cursor:pointer">
+          Sign Out
+        </button>
+      </div>
+    `;
+
+    document.getElementById("googleLogout")
+      .addEventListener("click", () => signOut(auth));
+  } else {
+    notice.innerHTML = `
+      <div style="text-align:center;padding:10px">
+        <h3>Sign in to InventLab Pro</h3>
+        <button id="googleLogin"
+          style="padding:12px 20px;border-radius:9px;cursor:pointer;font-weight:bold">
+          Continue with Google
+        </button>
+        <p id="loginStatus" style="margin-top:12px"></p>
+      </div>
+    `;
+
+    document.getElementById("googleLogin")
+      .addEventListener("click", async () => {
+        try {
+          await signInWithPopup(auth, provider);
+        } catch (error) {
+          document.getElementById("loginStatus").textContent =
+            "Login failed: " + error.message;
+        }
+      });
+  }
+});
