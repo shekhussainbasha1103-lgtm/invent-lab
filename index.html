@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#07111f"><meta name="description" content="InventLab Pro — visual electronics design, learning and project studio.">
+<meta name="theme-color" content="#07111f"><meta name="application-name" content="InventLab Pro Full AI"><meta name="description" content="InventLab Pro — visual electronics design, learning and project studio.">
 <link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icon.svg">
-<title>InventLab Pro v10 — Built-in MCU Learning Simulator</title>
+<title>InventLab Pro — Full AI Edition</title>
 <style>
 :root{--bg:#07111f;--panel:#0d1b2b;--panel2:#102338;--line:#203950;--text:#eaf4ff;--muted:#93a9bd;--cyan:#45e0d0;--blue:#6b9cff;--orange:#ffb86b;--red:#ff7373;--green:#7ce3a1}
 *{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 15% 0%,#123047 0,transparent 35%),var(--bg);color:var(--text);font:15px/1.5 Inter,system-ui,-apple-system,Segoe UI,sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer;border:1px solid var(--line);border-radius:10px;padding:10px 13px;background:#14283b;color:var(--text);transition:.15s}button:hover{border-color:var(--cyan);transform:translateY(-1px)}button.primary{background:var(--cyan);color:#04201f;border-color:var(--cyan);font-weight:800}button.ghost{background:transparent}button.danger{color:#ffb0b0}input,select,textarea{background:#081522;border:1px solid var(--line);border-radius:9px;padding:10px;color:var(--text);min-width:0}a{color:var(--cyan)}.app{display:grid;grid-template-columns:245px 1fr;min-height:100vh}.sidebar{border-right:1px solid var(--line);padding:22px 14px;background:#071421e8;position:sticky;top:0;height:100vh;overflow:auto}.brand{display:flex;align-items:center;gap:10px;font-size:20px;font-weight:900;margin:0 8px 24px}.logo{width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,var(--cyan),var(--blue));display:grid;place-items:center;color:#06121e;font-weight:1000}.eyebrow{font-size:11px;letter-spacing:.14em;color:var(--muted);text-transform:uppercase;margin:18px 10px 8px}.nav{display:flex;flex-direction:column;gap:5px}.nav button{text-align:left;background:transparent;border-color:transparent;color:#b6c8d8}.nav button.active,.nav button:hover{background:#142a3e;border-color:#24445c;color:white}.nav button span{display:inline-block;width:27px}.sidefoot{position:absolute;bottom:18px;left:14px;right:14px;color:var(--muted);font-size:12px}.main{min-width:0}.topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 26px;border-bottom:1px solid var(--line);background:#071421a8;position:sticky;top:0;z-index:5;backdrop-filter:blur(14px)}.topbar .right{display:flex;gap:9px;align-items:center}.status{font-size:12px;color:var(--green);display:flex;align-items:center;gap:7px}.dot{width:7px;height:7px;background:var(--green);border-radius:100%}.content{padding:26px;max-width:1600px;margin:auto}.page{display:none}.page.active{display:block}.hero{padding:30px;border:1px solid #23485b;border-radius:20px;background:linear-gradient(120deg,#123047,#0d1b2b 62%,#18243e);display:flex;justify-content:space-between;gap:22px;align-items:center;overflow:hidden}.hero h1{font-size:clamp(27px,4vw,43px);line-height:1.12;margin:9px 0 12px;letter-spacing:-.04em}.hero p{max-width:650px;color:#b4c7d8;margin:0 0 18px}.pill{display:inline-flex;gap:6px;align-items:center;border:1px solid #2a5265;border-radius:99px;padding:5px 9px;color:var(--cyan);font-size:12px}.hero-art{font-size:85px;filter:drop-shadow(0 0 30px #45e0d044);padding:0 24px}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:18px 0 25px}.stat,.card,.panel{border:1px solid var(--line);background:linear-gradient(145deg,#0e1e30,#0b1827);border-radius:15px;padding:17px}.stat small,.muted{color:var(--muted)}.stat strong{display:block;font-size:25px;margin:4px 0}.sectionhead{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:25px 0 13px}.sectionhead h2{margin:0;font-size:20px}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}.card{padding:0;overflow:hidden}.cardbody{padding:16px}.cardtop{height:112px;display:flex;align-items:center;justify-content:center;font-size:42px;background:radial-gradient(ellipse,#16384a,#0b1928)}.card h3{margin:7px 0;font-size:16px}.card p{color:var(--muted);font-size:13px;margin:5px 0 13px}.tagrow{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0 12px}.tag{font-size:11px;padding:4px 7px;border-radius:6px;background:#152d41;color:#b9d2e6}.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.between{justify-content:space-between}.toolbar{display:flex;gap:9px;flex-wrap:wrap;margin:14px 0}.toolbar input{flex:1;min-width:170px}.split{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:14px}.workspace{border:1px solid var(--line);border-radius:15px;background:#081523;overflow:hidden}.workhead{padding:12px 14px;display:flex;justify-content:space-between;gap:8px;align-items:center;border-bottom:1px solid var(--line);background:#0d1b2b}.canvas{position:relative;min-height:430px;background-color:#081522;background-image:radial-gradient(#244056 1px,transparent 1px);background-size:20px 20px;overflow:hidden}.canvas svg{width:100%;height:430px;display:block;touch-action:manipulation}.component{cursor:grab}.component:active{cursor:grabbing}.library{display:grid;grid-template-columns:repeat(2,1fr);gap:7px}.part{padding:10px 7px;font-size:12px;text-align:center;background:#102338}.part b{display:block;font-size:22px;margin-bottom:4px}.field{display:flex;flex-direction:column;gap:5px;margin:10px 0}.field label{font-size:12px;color:var(--muted)}.result{border:1px solid #265d58;background:#0c2929;border-radius:12px;padding:13px;margin-top:12px}.result strong{font-size:23px;color:var(--cyan)}.tabs{display:flex;gap:7px;flex-wrap:wrap}.tabs button.selected{background:#164344;border-color:var(--cyan)}.detail{display:grid;grid-template-columns:1fr 1fr;gap:16px}.visualbox{border:1px solid var(--line);border-radius:14px;background:#081522;padding:15px;min-height:240px}.visualbox svg{width:100%;height:230px}.notice{border:1px solid #65502d;background:#2b2416;color:#ffdaa2;border-radius:10px;padding:11px;font-size:12px;margin:12px 0}.empty{text-align:center;color:var(--muted);padding:30px}.mobilemenu{display:none}.modalback{position:fixed;inset:0;background:#000b;z-index:20;display:none;place-items:center;padding:18px}.modalback.open{display:grid}.modal{max-width:550px;width:100%;background:#0d1b2b;border:1px solid var(--line);border-radius:18px;padding:22px;max-height:90vh;overflow:auto}.toast{position:fixed;bottom:20px;right:20px;background:#173b3b;border:1px solid var(--cyan);padding:12px 16px;border-radius:10px;z-index:40;display:none}.toast.show{display:block}.footer{margin-top:30px;color:var(--muted);font-size:12px;border-top:1px solid var(--line);padding:16px 0}.small{font-size:12px}.progress{height:6px;background:#1d3346;border-radius:10px;overflow:hidden}.progress i{display:block;height:100%;background:var(--cyan)}.checkrow{display:flex;gap:9px;align-items:flex-start;margin:9px 0;color:#c3d3e0}.checkrow input{margin-top:5px}.hidden{display:none!important}
@@ -334,4 +334,61 @@ $('mcuExample')?.addEventListener('click',()=>{$('mcuCode').value=blinkExample;t
 $('mcuRun')?.addEventListener('click',()=>{mcuStop();let program;try{program=mcuParse($('mcuCode').value)}catch(e){$('mcuSerial').textContent='Compile/check error: '+e.message;$('mcuStatus').textContent='Sketch error';return}mcuPins={};mcuPwm={};$('mcuSerial').textContent='InventLab virtual runtime started.\n';$('mcuStatus').textContent='Running supported subset';$('mcuStatus').className='small sim-running';const token=++mcuRunToken;let initIndex=0;function runSetup(){if(token!==mcuRunToken)return;if(initIndex>=program.setup.length){runLoop();return}const c=program.setup[initIndex++];if(c.t==='write'&&c.p!==null)mcuPins[c.p]=c.v;else if(c.t==='pwm'&&c.p!==null){mcuPwm[c.p]=c.v;mcuPins[c.p]=c.v>0?1:0}else if(c.t==='serial')mcuSerial(c.v);mcuRender();setTimeout(runSetup,1)}let idx=0;function runLoop(){if(token!==mcuRunToken)return;if(!program.loop.length){mcuSerial('Loop has no supported operations.');mcuStop();return}if(idx>=program.loop.length)idx=0;const c=program.loop[idx++];if(c.t==='write'&&c.p!==null)mcuPins[c.p]=c.v;else if(c.t==='pwm'&&c.p!==null){mcuPwm[c.p]=c.v;mcuPins[c.p]=c.v>0?1:0}else if(c.t==='serial')mcuSerial(c.v);mcuRender();mcuTimer=setTimeout(runLoop,c.t==='delay'?Math.max(1,c.v):30)}runSetup();});
 
 </script>
+
+<!-- Full AI Edition: universal assistant, Firebase account and cloud workspace -->
+<style>
+#ilFullAiFab{position:fixed;right:20px;bottom:20px;z-index:50;border:0;border-radius:999px;padding:14px 18px;background:linear-gradient(120deg,#45e0d0,#6b9cff);color:#061522;font-weight:900;box-shadow:0 10px 35px #0008}
+#ilFullAiPanel{display:none;position:fixed;z-index:60;right:18px;bottom:82px;width:min(440px,calc(100vw - 28px));max-height:78vh;overflow:auto;background:#0d1b2b;border:1px solid #367080;border-radius:18px;box-shadow:0 20px 70px #000b;padding:16px}
+#ilFullAiPanel.open{display:block}#ilFullAiPanel textarea{width:100%;min-height:105px;margin:8px 0}
+#ilFullAiAnswer{white-space:pre-wrap;overflow-wrap:anywhere;background:#071522;border:1px solid #203950;border-radius:10px;padding:12px;min-height:80px;max-height:270px;overflow:auto;font-size:13px}
+.il-ai-head{display:flex;justify-content:space-between;align-items:center;gap:10px}.il-ai-head h3{margin:0}
+.il-account{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.il-account button{font-size:12px;padding:7px 9px}
+@media(max-width:600px){#ilFullAiFab{right:12px;bottom:12px}#ilFullAiPanel{right:8px;bottom:70px}}
+</style>
+<div id="ilAccountBar" class="il-account" style="position:fixed;right:16px;top:78px;z-index:8;background:#0d1b2beF;padding:7px 10px;border:1px solid #203950;border-radius:12px">
+  <span id="ilAuthStatus" class="small muted">Cloud: configure Firebase</span>
+  <button id="ilGoogleSignIn">Google Sign-In</button>
+  <button id="ilCloudSave" title="Save a snapshot of your workspace to your private cloud account">Save to Cloud</button>
+</div>
+<button id="ilFullAiFab" type="button">✦ Ask InventLab AI</button>
+<aside id="ilFullAiPanel" aria-label="Universal InventLab AI assistant">
+  <div class="il-ai-head"><h3>✦ InventLab AI Assistant</h3><button id="ilAiClose" class="ghost">✕</button></div>
+  <p class="small muted">Ask from any tab: project planning, circuit reasoning, MCU code, firmware, research, calculations or learning.</p>
+  <div class="field"><label>Student level</label><select id="ilAiLevel"><option>Beginner</option><option>Intermediate</option><option>Advanced</option></select></div>
+  <textarea id="ilAiQuestion" placeholder="Example: Guide me to build an ESP32 smart irrigation project step by step."></textarea>
+  <textarea id="ilAiContext" style="min-height:65px" placeholder="Optional: paste code, error, component list or project requirements"></textarea>
+  <div class="row"><button id="ilAiSend" class="primary">Ask Gemini AI</button><button id="ilAiClear">Clear</button></div>
+  <p id="ilAiConnection" class="small muted">AI connection: not checked</p>
+  <div id="ilFullAiAnswer">Your AI response will appear here.</div>
+  <p class="small muted">Engineering AI can make mistakes. Verify component ratings, datasheets and real-world safety before building.</p>
+</aside>
+<script>
+(()=>{
+ const $=id=>document.getElementById(id);
+ const panel=$('ilFullAiPanel');
+ $('ilFullAiFab')?.addEventListener('click',()=>panel.classList.toggle('open'));
+ $('ilAiClose')?.addEventListener('click',()=>panel.classList.remove('open'));
+ $('ilAiClear')?.addEventListener('click',()=>{$('ilAiQuestion').value='';$('ilAiContext').value='';$('ilFullAiAnswer').textContent='Your AI response will appear here.'});
+ $('ilAiSend')?.addEventListener('click',async()=>{
+   const question=$('ilAiQuestion').value.trim(); if(!question){$('ilAiQuestion').focus();return}
+   const active=document.querySelector('.page.active');
+   const tab=active?.id?.replace('page-','')||'overview';
+   const context=`Current InventLab workspace tab: ${tab}. ${$('ilAiContext').value.trim()}`;
+   const answer=$('ilFullAiAnswer'),status=$('ilAiConnection'),btn=$('ilAiSend');
+   btn.disabled=true;answer.textContent='Gemini is preparing your engineering guidance…';status.textContent='Connecting to AI backend…';
+   try{
+     const base=(window.INVENTLAB_API_URL||'').replace(/\/$/,'');
+     if(!base) throw new Error('Set INVENTLAB_API_URL in config.js to your deployed backend URL. See FULL_AI_SETUP.md.');
+     const r=await fetch(base+'/api/mentor',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({question,level:$('ilAiLevel').value,code:context})});
+     const d=await r.json().catch(()=>({}));
+     if(!r.ok) throw new Error(d.error||'AI backend request failed.');
+     answer.textContent=d.answer||'No response returned.';
+     status.textContent='Connected · '+(d.provider||'AI')+' · '+(d.model||'');
+   }catch(e){answer.textContent='AI connection error: '+e.message+'\n\nYour question is still here. Check FULL_AI_SETUP.md, backend deployment and API configuration.';status.textContent='AI not connected'}
+   finally{btn.disabled=false}
+ });
+})();
+</script>
+<script src="./config.js"></script><script type="module" src="./firebase-cloud.js"></script>
+
 </body></html>
