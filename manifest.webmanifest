@@ -2,14 +2,14 @@
   "name": "InventLab Pro — Electronics Engineering Studio",
   "short_name": "InventLab Pro",
   "description": "An electronics engineering learning, project-planning and calculation workspace for ECE and EEE students.",
-  "start_url": "./index.html",
-  "scope": "./",
+  "start_url": "/",
+  "scope": "/",
   "display": "standalone",
   "orientation": "any",
   "background_color": "#07111f",
   "theme_color": "#07111f",
   "categories": ["education", "productivity", "utilities"],
   "icons": [
-    {"src":"icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}
+    {"src":"/icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}
   ]
 }
