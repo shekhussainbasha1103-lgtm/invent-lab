@@ -4,7 +4,7 @@
   "cleanUrls": true,
   "functions": {
     "api/mentor.js": {
-      "maxDuration": 30
+      "maxDuration": 60
     },
     "api/health.js": {
       "maxDuration": 10
